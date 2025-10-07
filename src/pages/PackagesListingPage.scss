@@ -1,0 +1,150 @@
+@import '../styles/variables';
+@import '../styles/mixins';
+
+.packages-listing {
+  min-height: 100vh;
+  padding: $spacing-16 0;
+
+  &__header {
+    text-align: center;
+    margin-bottom: $spacing-12;
+  }
+
+  &__title {
+    font-size: $font-size-4xl;
+    font-weight: 700;
+    margin-bottom: $spacing-6;
+    color: $gray-900;
+
+    @include respond-to('md') {
+      font-size: $font-size-5xl;
+    }
+  }
+
+  &__description {
+    font-size: $font-size-xl;
+    color: $gray-600;
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.6;
+  }
+}
+
+// Filters
+.filters {
+  background-color: white;
+  border-radius: $border-radius-lg;
+  box-shadow: $shadow-md;
+  padding: $spacing-6;
+  margin-bottom: $spacing-8;
+
+  &__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: $spacing-4;
+  }
+
+  &__title {
+    font-size: $font-size-lg;
+    font-weight: 600;
+    margin: 0;
+  }
+
+  &__clear-btn {
+    @include button-reset;
+    color: $primary-600;
+    font-weight: 600;
+    transition: $transition-base;
+
+    &:hover {
+      color: $primary-700;
+    }
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: $spacing-4;
+
+    @include respond-to('md') {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+}
+
+.filter-group {
+  &__label {
+    display: block;
+    font-size: $font-size-sm;
+    font-weight: 600;
+    color: $gray-700;
+    margin-bottom: $spacing-2;
+  }
+
+  &__select {
+    width: 100%;
+    padding: $spacing-2 $spacing-3;
+    border: 1px solid $gray-300;
+    border-radius: $border-radius-md;
+    font-family: $font-family-base;
+    font-size: $font-size-base;
+    transition: $transition-base;
+    background-color: white;
+
+    &:focus {
+      outline: none;
+      border-color: $primary-500;
+      box-shadow: 0 0 0 3px rgba($primary-500, 0.1);
+    }
+  }
+}
+
+// Results Summary
+.results-summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: $spacing-8;
+
+  &__text {
+    color: $gray-600;
+    margin: 0;
+  }
+}
+
+// No Results
+.no-results {
+  text-align: center;
+  padding: $spacing-16 $spacing-4;
+
+  &__icon {
+    width: 96px;
+    height: 96px;
+    background-color: $gray-100;
+    border-radius: $border-radius-full;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto $spacing-6;
+  }
+
+  &__svg {
+    width: 48px;
+    height: 48px;
+    color: $gray-400;
+  }
+
+  &__title {
+    font-size: $font-size-xl;
+    font-weight: 600;
+    color: $gray-900;
+    margin-bottom: $spacing-2;
+  }
+
+  &__text {
+    color: $gray-600;
+    margin-bottom: $spacing-6;
+  }
+}
+

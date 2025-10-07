@@ -1,0 +1,74 @@
+@import '../styles/variables';
+@import '../styles/mixins';
+
+.footer {
+  background-color: $gray-900;
+  color: white;
+  padding: $spacing-12 0;
+
+  &__content {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: $spacing-8;
+
+    @include respond-to('md') {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  &__section {
+    // Spacing handled by grid gap
+  }
+
+  &__title {
+    font-size: $font-size-xl;
+    font-weight: 700;
+    margin-bottom: $spacing-4;
+    color: white;
+  }
+
+  &__text {
+    color: $gray-300;
+    margin-bottom: $spacing-4;
+    line-height: 1.6;
+  }
+
+  &__label {
+    font-weight: 600;
+    color: white;
+  }
+
+  &__links {
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-2;
+  }
+
+  &__link {
+    color: $gray-300;
+    transition: $transition-base;
+
+    &:hover {
+      color: white;
+    }
+  }
+
+  &__contacts {
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-2;
+  }
+
+  &__bottom {
+    margin-top: $spacing-8;
+    padding-top: $spacing-8;
+    border-top: 1px solid $gray-800;
+    text-align: center;
+  }
+
+  &__copyright {
+    color: $gray-300;
+    margin-bottom: 0;
+  }
+}
+

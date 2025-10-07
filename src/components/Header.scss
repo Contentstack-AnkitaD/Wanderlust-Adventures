@@ -1,0 +1,108 @@
+@import '../styles/variables';
+@import '../styles/mixins';
+
+.header {
+  background-color: white;
+  box-shadow: $shadow-sm;
+  position: sticky;
+  top: 0;
+  z-index: 50;
+
+  &__content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: $spacing-4 0;
+  }
+
+  &__logo {
+    font-size: $font-size-2xl;
+    font-weight: 700;
+    color: $primary-600;
+    transition: $transition-base;
+
+    &:hover {
+      color: $primary-700;
+    }
+  }
+
+  &__nav {
+    display: none;
+
+    @include respond-to('md') {
+      display: flex;
+      gap: $spacing-8;
+    }
+  }
+
+  &__nav-link {
+    color: $gray-700;
+    font-weight: 500;
+    transition: $transition-base;
+    position: relative;
+    padding-bottom: $spacing-1;
+
+    &:hover {
+      color: $primary-600;
+    }
+
+    &.active {
+      color: $primary-600;
+
+      &::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 2px;
+        background-color: $primary-600;
+      }
+    }
+  }
+
+  &__menu-btn {
+    @include button-reset;
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-1;
+    padding: $spacing-2;
+
+    @include respond-to('md') {
+      display: none;
+    }
+
+    span {
+      display: block;
+      width: 24px;
+      height: 2px;
+      background-color: $gray-600;
+      transition: $transition-base;
+    }
+  }
+
+  &__mobile-nav {
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-4;
+    margin-top: $spacing-4;
+    padding-top: $spacing-4;
+    border-top: 1px solid $gray-200;
+    padding-bottom: $spacing-4;
+
+    @include respond-to('md') {
+      display: none;
+    }
+  }
+
+  &__mobile-link {
+    color: $gray-700;
+    font-weight: 500;
+    transition: $transition-base;
+
+    &:hover {
+      color: $primary-600;
+    }
+  }
+}
+

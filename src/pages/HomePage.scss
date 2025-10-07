@@ -1,0 +1,196 @@
+@import '../styles/variables';
+@import '../styles/mixins';
+
+.home-page {
+  min-height: 100vh;
+}
+
+.section-title {
+  text-align: center;
+  font-size: $font-size-3xl;
+  font-weight: 700;
+  margin-bottom: $spacing-12;
+  color: $gray-900;
+
+  @include respond-to('md') {
+    font-size: $font-size-4xl;
+  }
+}
+
+// Hero Section
+.hero {
+  background: linear-gradient(135deg, $primary-600 0%, $secondary-600 100%);
+  color: white;
+  padding: $spacing-20 0;
+  text-align: center;
+
+  &__content {
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  &__title {
+    font-size: $font-size-4xl;
+    font-weight: 700;
+    margin-bottom: $spacing-6;
+    color: white;
+
+    @include respond-to('md') {
+      font-size: $font-size-6xl;
+    }
+  }
+
+  &__subtitle {
+    font-size: $font-size-xl;
+    margin-bottom: $spacing-8;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.6;
+
+    @include respond-to('md') {
+      font-size: $font-size-2xl;
+    }
+  }
+
+  &__cta {
+    font-size: $font-size-lg;
+    padding: $spacing-4 $spacing-8;
+    background-color: white;
+    color: $primary-600;
+
+    &:hover {
+      background-color: $gray-100;
+      color: $primary-600;
+    }
+  }
+}
+
+// Featured Packages Section
+.featured-packages {
+  padding: $spacing-16 0;
+  background-color: $gray-50;
+
+  &__cta {
+    text-align: center;
+    margin-top: $spacing-12;
+  }
+}
+
+// Popular Destinations Section
+.popular-destinations {
+  padding: $spacing-16 0;
+}
+
+.destinations-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: $spacing-6;
+
+  @include respond-to('md') {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @include respond-to('lg') {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.destination-card {
+  cursor: pointer;
+  border-radius: $border-radius-lg;
+  overflow: hidden;
+
+  &__image-wrapper {
+    position: relative;
+    overflow: hidden;
+    border-radius: $border-radius-lg;
+    height: 250px;
+  }
+
+  &__image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+
+    .destination-card:hover & {
+      transform: scale(1.1);
+    }
+  }
+
+  &__overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.2));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.3s ease;
+
+    .destination-card:hover & {
+      background: linear-gradient(to top, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.1));
+    }
+  }
+
+  &__name {
+    color: white;
+    font-size: $font-size-xl;
+    font-weight: 700;
+    margin: 0;
+  }
+}
+
+// Call to Action Section
+.cta-section {
+  background-color: $primary-600;
+  color: white;
+  padding: $spacing-16 0;
+
+  &__content {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  &__title {
+    font-size: $font-size-3xl;
+    font-weight: 700;
+    margin-bottom: $spacing-6;
+    color: white;
+
+    @include respond-to('md') {
+      font-size: $font-size-4xl;
+    }
+  }
+
+  &__text {
+    font-size: $font-size-xl;
+    margin-bottom: $spacing-8;
+    line-height: 1.6;
+  }
+
+  &__buttons {
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-4;
+    align-items: center;
+
+    @include respond-to('sm') {
+      flex-direction: row;
+      justify-content: center;
+    }
+
+    .btn-outline {
+      background-color: transparent;
+      color: white;
+      border: 2px solid white;
+
+      &:hover {
+        background-color: white;
+        color: $primary-600;
+      }
+    }
+  }
+}
+

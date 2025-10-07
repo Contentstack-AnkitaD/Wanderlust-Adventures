@@ -1,0 +1,355 @@
+@import '../styles/variables';
+@import '../styles/mixins';
+
+.package-detail {
+  min-height: 100vh;
+  padding: 0 0 $spacing-16;
+
+  &__hero {
+    position: relative;
+    height: 400px;
+    margin-bottom: $spacing-8;
+    border-radius: $border-radius-lg;
+    overflow: hidden;
+
+    @include respond-to('md') {
+      height: 500px;
+    }
+  }
+
+  &__hero-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  &__hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.7));
+    display: flex;
+    align-items: flex-end;
+    padding: $spacing-8;
+  }
+
+  &__hero-content {
+    width: 100%;
+  }
+
+  &__header {
+    margin-bottom: $spacing-12;
+  }
+
+  &__breadcrumb {
+    display: flex;
+    align-items: center;
+    gap: $spacing-2;
+    margin-bottom: $spacing-4;
+    font-size: $font-size-sm;
+    color: $gray-600;
+
+    a {
+      color: $primary-600;
+      transition: $transition-base;
+
+      &:hover {
+        color: $primary-700;
+      }
+    }
+  }
+
+  &__badge {
+    display: inline-block;
+    background-color: $secondary-600;
+    color: white;
+    font-size: $font-size-sm;
+    padding: $spacing-1 $spacing-3;
+    border-radius: $border-radius-md;
+    margin-bottom: $spacing-4;
+    font-weight: 600;
+  }
+
+  &__title {
+    font-size: $font-size-3xl;
+    font-weight: 700;
+    margin-bottom: $spacing-6;
+    color: white;
+
+    @include respond-to('md') {
+      font-size: $font-size-4xl;
+    }
+  }
+
+  &__meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: $spacing-6;
+  }
+
+  &__meta-item {
+    display: flex;
+    align-items: center;
+    gap: $spacing-2;
+    color: $gray-700;
+    font-size: $font-size-base;
+  }
+
+  &__icon {
+    width: 20px;
+    height: 20px;
+    color: $primary-600;
+  }
+
+  &__content {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: $spacing-8;
+
+    @include respond-to('lg') {
+      grid-template-columns: 2fr 1fr;
+    }
+  }
+
+  &__main {
+    // Main content area
+  }
+
+  &__sidebar {
+    @include respond-to('lg') {
+      position: sticky;
+      top: calc(72px + #{$spacing-4}); // Header height + padding
+      align-self: start;
+    }
+  }
+}
+
+// Content Sections
+.content-section {
+  margin-bottom: $spacing-12;
+
+  &__title {
+    font-size: $font-size-2xl;
+    font-weight: 700;
+    margin-bottom: $spacing-4;
+    color: $gray-900;
+  }
+
+  &__text {
+    color: $gray-700;
+    line-height: 1.8;
+    font-size: $font-size-lg;
+  }
+}
+
+// Highlights List
+.highlights-list {
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: $spacing-3;
+
+  @include respond-to('md') {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  &__item {
+    display: flex;
+    align-items: start;
+    gap: $spacing-3;
+    color: $gray-700;
+    line-height: 1.6;
+  }
+
+  &__icon {
+    width: 20px;
+    height: 20px;
+    color: $primary-600;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+}
+
+// Included List
+.included-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-3;
+
+  &__item {
+    display: flex;
+    align-items: center;
+    gap: $spacing-3;
+    color: $gray-700;
+    font-size: $font-size-base;
+  }
+
+  &__icon {
+    width: 20px;
+    height: 20px;
+    color: $primary-600;
+    flex-shrink: 0;
+  }
+}
+
+// Itinerary
+.itinerary {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-6;
+
+  &__item {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: $spacing-4;
+    position: relative;
+
+    &:not(:last-child)::before {
+      content: '';
+      position: absolute;
+      left: 20px;
+      top: 50px;
+      bottom: -24px;
+      width: 2px;
+      background-color: $gray-200;
+    }
+  }
+
+  &__day {
+    width: 40px;
+    height: 40px;
+    background-color: $primary-600;
+    color: white;
+    border-radius: $border-radius-full;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: $font-size-sm;
+    flex-shrink: 0;
+    z-index: 1;
+  }
+
+  &__content {
+    padding-bottom: $spacing-2;
+  }
+
+  &__title {
+    font-size: $font-size-lg;
+    font-weight: 600;
+    margin-bottom: $spacing-2;
+    color: $gray-900;
+  }
+
+  &__description {
+    color: $gray-700;
+    line-height: 1.6;
+    margin: 0;
+  }
+}
+
+// Booking Card
+.booking-card {
+  @include card;
+  padding: $spacing-6;
+  position: sticky;
+  top: $spacing-4;
+
+  &__price {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: $spacing-6 0;
+    border-bottom: 1px solid $gray-200;
+    margin-bottom: $spacing-6;
+  }
+
+  &__price-label {
+    font-size: $font-size-sm;
+    color: $gray-600;
+    margin-bottom: $spacing-2;
+  }
+
+  &__price-value {
+    font-size: $font-size-4xl;
+    font-weight: 700;
+    color: $primary-600;
+    line-height: 1;
+  }
+
+  &__price-unit {
+    font-size: $font-size-sm;
+    color: $gray-600;
+    margin-top: $spacing-1;
+  }
+
+  &__btn {
+    width: 100%;
+    padding: $spacing-4;
+    font-size: $font-size-lg;
+    margin-bottom: $spacing-6;
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-3;
+    padding-bottom: $spacing-6;
+    border-bottom: 1px solid $gray-200;
+    margin-bottom: $spacing-6;
+  }
+
+  &__info-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__info-label {
+    font-weight: 600;
+    color: $gray-700;
+  }
+
+  &__info-value {
+    color: $gray-600;
+  }
+
+  &__contact {
+    text-align: center;
+  }
+
+  &__contact-text {
+    margin-bottom: $spacing-2;
+    color: $gray-600;
+  }
+
+  &__contact-link {
+    color: $primary-600;
+    font-weight: 600;
+    transition: $transition-base;
+
+    &:hover {
+      color: $primary-700;
+    }
+  }
+}
+
+// Not Found
+.not-found {
+  text-align: center;
+  padding: $spacing-20 $spacing-4;
+
+  &__title {
+    font-size: $font-size-3xl;
+    font-weight: 700;
+    margin-bottom: $spacing-4;
+    color: $gray-900;
+  }
+
+  &__text {
+    color: $gray-600;
+    margin-bottom: $spacing-8;
+    font-size: $font-size-lg;
+  }
+}
+

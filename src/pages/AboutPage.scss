@@ -1,0 +1,163 @@
+@import '../styles/variables';
+@import '../styles/mixins';
+
+.about-page {
+  min-height: 100vh;
+  padding: $spacing-16 0;
+
+  &__header {
+    text-align: center;
+    margin-bottom: $spacing-12;
+  }
+
+  &__title {
+    font-size: $font-size-4xl;
+    font-weight: 700;
+    margin-bottom: 0;
+    color: $gray-900;
+
+    @include respond-to('md') {
+      font-size: $font-size-5xl;
+    }
+  }
+
+  &__content {
+    max-width: 900px;
+    margin: 0 auto $spacing-12;
+  }
+
+  &__text {
+    color: $gray-700;
+    line-height: 1.8;
+    font-size: $font-size-lg;
+    white-space: pre-line;
+  }
+}
+
+// Info Cards
+.info-cards {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: $spacing-8;
+  margin-bottom: $spacing-12;
+
+  @include respond-to('md') {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.info-card {
+  @include card;
+  padding: $spacing-8;
+
+  &--center {
+    text-align: center;
+  }
+
+  &__title {
+    font-size: $font-size-2xl;
+    font-weight: 700;
+    color: $primary-600;
+    margin-bottom: $spacing-4;
+  }
+
+  &__number {
+    font-size: 3.5rem;
+    font-weight: 700;
+    color: $primary-600;
+    margin-bottom: $spacing-2;
+    line-height: 1;
+  }
+
+  &__subtitle {
+    font-size: $font-size-xl;
+    font-weight: 600;
+    color: $gray-900;
+    margin-bottom: $spacing-2;
+  }
+
+  &__text {
+    color: $gray-700;
+    line-height: 1.7;
+    margin: 0;
+  }
+}
+
+// Team Section
+.team-section {
+  @include card;
+  padding: $spacing-8;
+  margin-bottom: $spacing-12;
+
+  &__title {
+    font-size: $font-size-2xl;
+    font-weight: 700;
+    color: $primary-600;
+    margin-bottom: $spacing-6;
+  }
+
+  &__text {
+    color: $gray-700;
+    line-height: 1.8;
+    white-space: pre-line;
+    margin: 0;
+  }
+}
+
+// Features
+.features {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: $spacing-6;
+
+  @include respond-to('md') {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.feature {
+  text-align: center;
+  padding: $spacing-6;
+
+  &__icon {
+    width: 64px;
+    height: 64px;
+    border-radius: $border-radius-full;
+    @include flex-center;
+    margin: 0 auto $spacing-4;
+
+    &--primary {
+      background-color: $primary-100;
+    }
+
+    &--secondary {
+      background-color: $secondary-100;
+    }
+  }
+
+  &__svg {
+    width: 32px;
+    height: 32px;
+
+    .feature__icon--primary & {
+      color: $primary-600;
+    }
+
+    .feature__icon--secondary & {
+      color: $secondary-600;
+    }
+  }
+
+  &__title {
+    font-size: $font-size-lg;
+    font-weight: 600;
+    margin-bottom: $spacing-2;
+    color: $gray-900;
+  }
+
+  &__text {
+    color: $gray-600;
+    margin: 0;
+  }
+}
+

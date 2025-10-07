@@ -1,0 +1,240 @@
+@import './variables';
+@import './mixins';
+
+// Reset & Base Styles
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: $font-family-base;
+  color: $gray-900;
+  background-color: white;
+  line-height: 1.5;
+}
+
+// Typography
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: $spacing-4;
+}
+
+h1 {
+  font-size: $font-size-4xl;
+
+  @include respond-to('md') {
+    font-size: $font-size-5xl;
+  }
+}
+
+h2 {
+  font-size: $font-size-3xl;
+
+  @include respond-to('md') {
+    font-size: $font-size-4xl;
+  }
+}
+
+h3 {
+  font-size: $font-size-2xl;
+}
+
+h4 {
+  font-size: $font-size-xl;
+}
+
+p {
+  margin-bottom: $spacing-4;
+  line-height: 1.6;
+}
+
+a {
+  color: $primary-600;
+  text-decoration: none;
+  transition: $transition-base;
+
+  &:hover {
+    color: $primary-700;
+  }
+}
+
+// Utility Classes
+.container {
+  @include container;
+}
+
+.btn {
+  display: inline-block;
+  padding: $spacing-3 $spacing-6;
+  font-weight: 600;
+  border-radius: $border-radius-lg;
+  transition: $transition-base;
+  cursor: pointer;
+  border: none;
+  font-family: $font-family-base;
+  font-size: $font-size-base;
+  text-align: center;
+
+  &:focus {
+    outline: 2px solid $primary-500;
+    outline-offset: 2px;
+  }
+}
+
+.btn-primary {
+  background-color: $primary-600;
+  color: white;
+
+  &:hover {
+    background-color: $primary-700;
+    color: white;
+  }
+}
+
+.btn-secondary {
+  background-color: $secondary-600;
+  color: white;
+
+  &:hover {
+    background-color: $secondary-700;
+    color: white;
+  }
+}
+
+.btn-outline {
+  background-color: transparent;
+  color: $primary-600;
+  border: 2px solid $primary-600;
+
+  &:hover {
+    background-color: $primary-600;
+    color: white;
+  }
+}
+
+.card {
+  @include card;
+}
+
+// Form Elements
+input, select, textarea {
+  width: 100%;
+  padding: $spacing-3;
+  border: 1px solid $gray-300;
+  border-radius: $border-radius-md;
+  font-family: $font-family-base;
+  font-size: $font-size-base;
+  transition: $transition-base;
+
+  &:focus {
+    outline: none;
+    border-color: $primary-500;
+    box-shadow: 0 0 0 3px rgba($primary-500, 0.1);
+  }
+
+  &::placeholder {
+    color: $gray-400;
+  }
+}
+
+label {
+  display: block;
+  font-weight: 500;
+  margin-bottom: $spacing-2;
+  color: $gray-700;
+}
+
+// Loading States
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+.animate-pulse {
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+// Grid
+.grid {
+  display: grid;
+  gap: $spacing-8;
+}
+
+.grid-cols-1 {
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+}
+
+@include respond-to('md') {
+  .md\:grid-cols-2 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .md\:grid-cols-3 {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .md\:grid-cols-4 {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+
+@include respond-to('lg') {
+  .lg\:grid-cols-2 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .lg\:grid-cols-3 {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .lg\:grid-cols-4 {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+
+// Text Utilities
+.text-center {
+  text-align: center;
+}
+
+.text-gray-600 {
+  color: $gray-600;
+}
+
+.text-gray-700 {
+  color: $gray-700;
+}
+
+.text-primary {
+  color: $primary-600;
+}
+
+// Spacing Utilities
+.mt-4 { margin-top: $spacing-4; }
+.mt-8 { margin-top: $spacing-8; }
+.mt-12 { margin-top: $spacing-12; }
+.mb-4 { margin-bottom: $spacing-4; }
+.mb-6 { margin-bottom: $spacing-6; }
+.mb-8 { margin-bottom: $spacing-8; }
+.mb-12 { margin-bottom: $spacing-12; }
+.py-16 { padding: $spacing-16 0; }
+.py-20 { padding: $spacing-20 0; }
+
+// Min Height
+.min-h-screen {
+  min-height: 100vh;
+}
+
