@@ -642,14 +642,15 @@
             reactKey = k;
           }
         
-          properties.push({ Key: reactKey, Value: v });
+          properties.push({ key: reactKey, value: v });
         }
         
         
         if (properties.length) {
-          const propsObject = {};
-          for (const { Key, Value } of properties) propsObject[Key] = Value;
-          elementJSON.props.properties = propsObject;
+          elementJSON.props.properties = {
+            type: "array",
+            staticString: JSON.stringify(properties)
+          };
         }
         
 
