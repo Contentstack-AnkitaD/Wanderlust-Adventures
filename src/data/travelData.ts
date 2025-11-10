@@ -152,7 +152,7 @@ export const travelPackages: TravelPackage[] = [
     difficulty_level: 'easy',
     featured: false,
     url: 'paris_city_break',
-    image: 'https://images.unsplash.com/photo-1502602898536-47ad22581b52?w=600&h=400&fit=crop&auto=format',
+    image: 'https://images.unsplash.com/photo-1431274172761-fca41d930114?w=600&h=400&fit=crop&auto=format',
     highlights: [
       'Eiffel Tower visit',
       'Louvre Museum tour',
@@ -271,12 +271,77 @@ export const travelPackages: TravelPackage[] = [
       'Hammam spa experience'
     ],
     included: ['Riad accommodation', 'Daily breakfast & dinner', 'Desert tour', 'Cooking class', 'All transfers']
+  },
+  {
+    id: '11',
+    title: 'Vietnam Heritage Discovery',
+    destination_city: 'Ho Chi Minh City',
+    destination_country: 'vietnam',
+    package_category: 'cultural',
+    package_duration: 9,
+    package_description: 'Discover the rich history and vibrant culture of Vietnam from bustling Ho Chi Minh City to the serene beauty of Ha Long Bay, with authentic cuisine and historical insights.',
+    package_price: 2599,
+    difficulty_level: 'moderate',
+    featured: true,
+    url: 'vietnam_heritage_discovery',
+    image: 'https://images.unsplash.com/photo-1559592413-7cec4d0cae2b?w=600&h=400&fit=crop&auto=format',
+    highlights: [
+      'Ha Long Bay cruise',
+      'Cu Chi Tunnels exploration',
+      'Mekong Delta boat tour',
+      'Street food tours',
+      'Traditional water puppet show'
+    ],
+    included: ['Hotel accommodation', 'Daily breakfast', 'Domestic flights', 'All tours & transfers', 'English-speaking guide'],
+    itinerary: [
+      { day: 1, title: 'Arrival in Ho Chi Minh City', description: 'Arrive and explore the vibrant city center. Welcome dinner with traditional Vietnamese cuisine.' },
+      { day: 2, title: 'City & History Tour', description: 'Visit War Remnants Museum, Reunification Palace, and Cu Chi Tunnels.' },
+      { day: 3, title: 'Mekong Delta Adventure', description: 'Full-day boat tour through the Mekong Delta with local village visits.' },
+      { day: 4, title: 'Flight to Hanoi', description: 'Morning flight to Hanoi. Afternoon walking tour of Old Quarter.' },
+      { day: 5, title: 'Hanoi Cultural Experience', description: 'Visit Temple of Literature, Hoan Kiem Lake, and enjoy water puppet show.' },
+      { day: 6, title: 'Ha Long Bay Cruise', description: 'Transfer to Ha Long Bay for overnight cruise with cave exploration.' },
+      { day: 7, title: 'Ha Long Bay & Return', description: 'Morning activities on the bay, return to Hanoi in afternoon.' },
+      { day: 8, title: 'Hoi An Day Trip', description: 'Day trip to ancient town of Hoi An with lantern festival experience.' },
+      { day: 9, title: 'Departure', description: 'Final breakfast and airport transfer.' }
+    ]
+  },
+  {
+    id: '12',
+    title: 'Iceland Northern Lights Adventure',
+    destination_city: 'Reykjavik',
+    destination_country: 'iceland',
+    package_category: 'adventure',
+    package_duration: 8,
+    package_description: 'Experience the magical beauty of Iceland with Northern Lights viewing, geothermal spas, dramatic waterfalls, and glacier adventures in the land of fire and ice.',
+    package_price: 3899,
+    difficulty_level: 'moderate',
+    featured: true,
+    url: 'iceland_northern_lights_adventure',
+    image: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600&h=400&fit=crop&auto=format',
+    highlights: [
+      'Northern Lights hunting tours',
+      'Blue Lagoon geothermal spa',
+      'Golden Circle sightseeing',
+      'Glacier hiking experience',
+      'Dramatic waterfalls tour'
+    ],
+    included: ['Hotel accommodation', 'Daily breakfast', 'All tours & transfers', 'Winter gear rental', 'Expert Northern Lights guide'],
+    itinerary: [
+      { day: 1, title: 'Arrival in Reykjavik', description: 'Arrive in Iceland and explore colorful Reykjavik city center. Welcome dinner with traditional Icelandic cuisine.' },
+      { day: 2, title: 'Golden Circle Tour', description: 'Visit Thingvellir National Park, Geysir geothermal area, and mighty Gullfoss waterfall.' },
+      { day: 3, title: 'South Coast Adventure', description: 'Explore Seljalandsfoss and Skógafoss waterfalls, black sand beaches of Reynisfjara.' },
+      { day: 4, title: 'Glacier Hiking', description: 'Guided glacier walk on Sólheimajökull glacier with professional equipment and instruction.' },
+      { day: 5, title: 'Blue Lagoon & Northern Lights', description: 'Relax in the famous Blue Lagoon geothermal spa. Evening Northern Lights hunting tour.' },
+      { day: 6, title: 'Snæfellsnes Peninsula', description: 'Day trip to the mystical Snæfellsnes Peninsula, visiting Kirkjufell mountain and charming fishing villages.' },
+      { day: 7, title: 'Reykjavik Culture & Northern Lights', description: 'Explore Reykjavik museums and local culture. Final Northern Lights viewing opportunity.' },
+      { day: 8, title: 'Departure', description: 'Final breakfast and transfer to Keflavik Airport.' }
+    ]
   }
 ];
 
 export const homePageData = {
-  hero_title: 'Discover Your Next Adventure',
-  hero_subtitle: 'Explore the world with our expertly crafted travel packages and create memories that last a lifetime',
+  hero_title: 'Discover Your Next International Adventure',
+  hero_subtitle: 'From hidden gems to iconic destinations, let us guide you to the world\'s most captivating international experiences',
   cta_text: 'Explore Packages',
   featured_packages_title: 'Featured Destinations',
   popular_destinations_title: 'Popular Destinations'
